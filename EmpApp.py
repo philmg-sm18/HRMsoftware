@@ -86,15 +86,20 @@ def AddEmp():
 
 @app.route('/aboutUs')
 def aboutUs():
+    emp_id = tuple()
+    first_name = tuple()
+    last_name = tuple()
+    pri_skill = tuple()
+    location = tuple()
     cursor = db_conn.cursor()
     cursor.execute('SELECT * FROM employee')
     db = cursor.fetchall()
     for employee in db:
-        emp_id = employee[0]
-        first_name = employee[1]
-        last_name = employee[2]
-        pri_skill = employee[3]
-        location = employee[4]
+        emp_id = emp_id + (employee[0],)
+        first_name = first_name + (employee[1],)
+        last_name = last_name+(employee[2],)
+        pri_skill = pri_skill+(employee[3],)
+        location = location+(employee[4],)
     emp_image_file = 'https://pbs.twimg.com/profile_images/1389140738827501568/RUeCH5Dg_400x400.jpg'
     return render_template(
         # 'AboutUs.html', fname=first_name, lname=last_name,
