@@ -80,6 +80,14 @@ def AddEmp():
     print("all modification done...")
     return render_template('AddEmpOutput.html', name=emp_name)
 
+@app.route('/aboutUs')
+def aboutUs():
+    return render_template('AboutUs.html')
+    #return "Try AAAAA"
+
+@app.route('/hello')
+def hello_world():
+   return "hello world"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=True)
