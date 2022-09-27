@@ -82,12 +82,7 @@ def AddEmp():
 
 @app.route('/aboutUs')
 def aboutUs():
-    return render_template('AboutUs.html')
-    #return "Try AAAAA"
-
-@app.route('/hello')
-def hello_world():
-   return "hello world"
+    return render_template('AboutUs.html', fname='Yap',lname='HK', pri_skill='cloud', location='Sepang')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=True)
