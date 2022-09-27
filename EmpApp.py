@@ -87,6 +87,26 @@ def AddEmp():
 @app.route('/aboutUs')
 def aboutUs():
     cursor = db_conn.cursor()
+    cursor.execute('SELECT * FROM employee')
+    db = cursor.fetchall()
+    emp_id = db[0]
+    first_name = db[1]
+    last_name = db[2]
+    pri_skill = db[3]
+    location = db[4]
+    emp_image_file = 'https://pbs.twimg.com/profile_images/1389140738827501568/RUeCH5Dg_400x400.jpg'
+    return render_template(
+        # 'AboutUs.html', fname=first_name, lname=last_name,
+        'TryAboutUs.html', fname=first_name, lname=last_name,
+        emp_image_file=emp_image_file,
+        pri_skill=pri_skill, location=location
+    )
+
+
+'''
+@app.route('/aboutUs')
+def aboutUs():
+    cursor = db_conn.cursor()
     cursor.execute('SELECT * FROM employee WHERE emp_id=%s', ('1'))
     db = cursor.fetchone()
     emp_id = db[0]
@@ -101,7 +121,7 @@ def aboutUs():
         emp_image_file=emp_image_file,
         pri_skill=pri_skill, location=location
     )
-
+'''
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=True)
