@@ -86,7 +86,7 @@ def AddEmp():
 
 @app.route('/aboutUs')
 def aboutUs():
-    db = db_conn.db
+    db = db_conn
     emp_id = db.Column(db.String, primary_key=True)
     first_name = db.Column(db.String)
     last_name = db.Column(db.String)
