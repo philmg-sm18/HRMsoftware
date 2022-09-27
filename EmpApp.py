@@ -86,8 +86,15 @@ def AddEmp():
 
 @app.route('/aboutUs')
 def aboutUs():
+    db = db_conn.db
+    emp_id = db.Column(db.String, primary_key=True)
+    first_name = db.Column(db.String)
+    last_name = db.Column(db.String)
+    pri_skill = db.Column(db.String)
+    location = db.Column(db.String)
+    emp_image_file = db.Column(db.String)
     return render_template(
-        'AboutUs.html', fname='Yap', lname='HK',
+        'AboutUs.html', fname=first_name, lname=last_name,
         emp_image_file='https://pbs.twimg.com/profile_images/1389140738827501568/RUeCH5Dg_400x400.jpg',
         pri_skill='cloud', location='Sepang'
     )
