@@ -108,7 +108,7 @@ def aboutUs():
     test_list = tuple([0, 1, 2, 3, 4, 5])
     i = 0
     for employee in employees:
-        employee += test_list[i]
+        employee += tuple(test_list[i])
         i += 1
     #emp_image_file = 'https://pbs.twimg.com/profile_images/1389140738827501568/RUeCH5Dg_400x400.jpg'
     return render_template(
