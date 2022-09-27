@@ -96,7 +96,8 @@ def aboutUs():
     location = db[4]
     emp_image_file = 'https://pbs.twimg.com/profile_images/1389140738827501568/RUeCH5Dg_400x400.jpg'
     return render_template(
-        'AboutUs.html', fname=first_name, lname=last_name,
+        # 'AboutUs.html', fname=first_name, lname=last_name,
+        'TryAboutUs.html', fname=first_name, lname=last_name,
         emp_image_file=emp_image_file,
         pri_skill=pri_skill, location=location
     )
