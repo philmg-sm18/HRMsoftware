@@ -88,7 +88,7 @@ def AddEmp():
 def aboutUs():
     return render_template(
         'AboutUs.html', fname='Yap', lname='HK',
-        emp_image_file='"https://pbs.twimg.com/profile_images/1389140738827501568/RUeCH5Dg_400x400.jpg"',
+        emp_image_file='https://pbs.twimg.com/profile_images/1389140738827501568/RUeCH5Dg_400x400.jpg',
         pri_skill='cloud', location='Sepang'
     )
 
