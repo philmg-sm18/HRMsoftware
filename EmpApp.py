@@ -89,12 +89,12 @@ def aboutUs():
     cursor = db_conn.cursor()
     cursor.execute('SELECT * FROM employee')
     db = cursor.fetchall()
-    for employee in db.count:
-        emp_id = db[employee][0]
-        first_name = db[employee][1]
-        last_name = db[employee][2]
-        pri_skill = db[employee][3]
-        location = db[employee][4]
+    for employee in db:
+        emp_id = employee[0]
+        first_name = employee[1]
+        last_name = employee[2]
+        pri_skill = employee[3]
+        location = employee[4]
     emp_image_file = 'https://pbs.twimg.com/profile_images/1389140738827501568/RUeCH5Dg_400x400.jpg'
     return render_template(
         # 'AboutUs.html', fname=first_name, lname=last_name,
