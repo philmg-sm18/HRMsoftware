@@ -105,7 +105,7 @@ def aboutUs():
     cursor.execute('SELECT * FROM employee')
     employees = cursor.fetchall()
     emp_image_file = show_image(custombucket)
-    test_list = [0, 1, 2, 3, 4, 5]
+    test_list = tuple([0, 1, 2, 3, 4, 5])
     i = 0
     for employee in employees:
         employee += test_list[i]
