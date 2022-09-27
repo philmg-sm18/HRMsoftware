@@ -23,7 +23,7 @@ table = 'employee'
 
 def show_image(bucket):
     s3_client = boto3.client('s3')
-    public_urls = []
+    public_urls = tuple()
     try:
         for item in s3_client.list_objects(Bucket=bucket)['Contents']:
             presigned_url = s3_client.generate_presigned_url(
