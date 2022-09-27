@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-app.jinja_env.filters['zip']
 
 <head>
     <meta charset="UTF-8">
@@ -17,7 +16,7 @@ app.jinja_env.filters['zip']
                 <h1 style="color: DodgerBlue">About Us</h1>
                 <h4 style="color:black">Our Portfolio</h1>
 
-                    {% for emp_image_file, employee in emp_image_files | zip(employees) %}
+                    {% for employee in employees%}
                     <table border="2" width="30%" height="600px">
                         <tr>
                             <td colspan="2">
@@ -28,7 +27,8 @@ app.jinja_env.filters['zip']
                         </tr>
                         <td>
                             <div style="text-align: center;"><br><br>
-                                <img src="{{ emp_image_file }}" align="center" width="500px" height="500px">
+                                <img src="{{ emp_image_file[{{employee[0]}}] }}" align="center" width="500px"
+                                    height="500px">
                                 <font size="5" face="Helvetica"> <br> {{ image_url }} <br><br></font>
                             </div>
                         </td>
