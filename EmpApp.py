@@ -86,13 +86,15 @@ def AddEmp():
 
 @app.route('/aboutUs')
 def aboutUs():
-    db = db_conn
-    emp_id = db.Column(db.String, primary_key=True)
-    first_name = db.Column(db.String)
-    last_name = db.Column(db.String)
-    pri_skill = db.Column(db.String)
-    location = db.Column(db.String)
-    emp_image_file = db.Column(db.String)
+    cursor = db_conn.cursor()
+    cursor.execute('SELECT * FROM employee')
+    db = cursor.fetchone()
+    emp_id = db['emp_id']
+    first_name = db['first_name']
+    last_name = db['last_name']
+    pri_skill = db['pri_skill']
+    location = db['location']
+    emp_image_file = db['emp_image_file']
     return render_template(
         'AboutUs.html', fname=first_name, lname=last_name,
         emp_image_file='https://pbs.twimg.com/profile_images/1389140738827501568/RUeCH5Dg_400x400.jpg',
