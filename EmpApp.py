@@ -105,7 +105,7 @@ def aboutUs():
     cursor.execute('SELECT * FROM employee')
     init_employees = cursor.fetchall()
     emp_image_file = show_image(custombucket)
-    test_list = list('test1', 'test2')
+    test_list = list('test1 , test2')
     employees = init_employees + (test_list,)
     #emp_image_file = 'https://pbs.twimg.com/profile_images/1389140738827501568/RUeCH5Dg_400x400.jpg'
     return render_template(
