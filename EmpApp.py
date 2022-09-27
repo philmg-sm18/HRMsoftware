@@ -89,7 +89,7 @@ def aboutUs():
     cursor = db_conn.cursor()
     cursor.execute('SELECT * FROM employee WHERE emp_id=%s', ('1'))
     db = cursor.fetchone()
-    emp_id = db['emp_id']
+    emp_id = db[1]
     first_name = db['first_name']
     last_name = db['last_name']
     pri_skill = db['pri_skill']
