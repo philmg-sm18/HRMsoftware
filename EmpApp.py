@@ -89,8 +89,8 @@ def aboutUs():
     cursor = db_conn.cursor()
     cursor.execute('SELECT * FROM employee')
     db = cursor.fetchall()
-    for employee in db:
-        emp_id = db[int(employee)][0]
+    for employee in db.count:
+        emp_id = db[employee][0]
         first_name = db[employee][1]
         last_name = db[employee][2]
         pri_skill = db[employee][3]
