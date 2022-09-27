@@ -89,6 +89,8 @@ def aboutUs():
     cursor = db_conn.cursor()
     cursor.execute('SELECT * FROM employee')
     db = cursor.fetchone()
+    print(db)
+    """
     emp_id = db['emp_id']
     first_name = db['first_name']
     last_name = db['last_name']
@@ -100,6 +102,7 @@ def aboutUs():
         emp_image_file='https://pbs.twimg.com/profile_images/1389140738827501568/RUeCH5Dg_400x400.jpg',
         pri_skill='cloud', location='Sepang'
     )
+    """
 
 
 if __name__ == '__main__':
