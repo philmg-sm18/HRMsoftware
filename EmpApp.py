@@ -103,10 +103,10 @@ def AddEmp():
 def aboutUs():
     cursor = db_conn.cursor()
     cursor.execute('SELECT * FROM employee')
-    init_employees = cursor.fetchall()
+    employees = cursor.fetchall()
     emp_image_file = show_image(custombucket)
     test_list = [0, 1, 2, 3, 4, 5]
-    employees = init_employees + (test_list,)
+    employees = employees + (test_list,)
     #emp_image_file = 'https://pbs.twimg.com/profile_images/1389140738827501568/RUeCH5Dg_400x400.jpg'
     return render_template(
         'AboutUs.html', employees=employees, emp_image_file=emp_image_file)
