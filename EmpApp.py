@@ -30,8 +30,8 @@ def show_image(bucket):
                 'get_object', Params={'Bucket': bucket, 'Key': item['Key']}, ExpiresIn=100)
             public_urls.append(presigned_url)
     except Exception as e:
-        public_urls.append('fail{}', item)
-        #pass
+        public_urls += ('fail{}', item)
+        # pass
     # print("[INFO] : The contents inside show_image = ", public_urls)
     return public_urls
 
