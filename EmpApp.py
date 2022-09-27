@@ -93,8 +93,8 @@ def aboutUs():
     location = tuple()
     cursor = db_conn.cursor()
     cursor.execute('SELECT * FROM employee')
-    db = cursor.fetchall()
-    for employee in db:
+    employees = cursor.fetchall()
+    for employee in employees:
         emp_id = emp_id + (employee[0],)
         first_name = first_name + (employee[1],)
         last_name = last_name+(employee[2],)
@@ -102,8 +102,8 @@ def aboutUs():
         location = location+(employee[4],)
     emp_image_file = 'https://pbs.twimg.com/profile_images/1389140738827501568/RUeCH5Dg_400x400.jpg'
     return render_template(
-        'AboutUs.html', fname=first_name, lname=last_name,
-        # 'TryAboutUs.html', fname=first_name, lname=last_name,
+        # 'AboutUs.html', fname=first_name, lname=last_name,
+        'TryAboutUs2.html', employees=employees, fname=first_name, lname=last_name,
         emp_image_file=emp_image_file,
         pri_skill=pri_skill, location=location
     )

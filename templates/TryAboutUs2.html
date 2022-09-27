@@ -18,11 +18,12 @@
                 <h1 style="color: DodgerBlue">About Us</h1>
                 <h4 style="color:black">Our Portfolio</h1>
 
+                    {% for employee in employees%}
                     <table border="2" width="30%" height="600px">
                         <tr>
                             <td colspan="2">
                                 <div style="text-align: center;">
-                                    <font size="5" face="Helvetica">{{ fname }}'s Portfolio</font>
+                                    <font size="5" face="Helvetica">${ employee.fname }'s Portfolio</font>
                                 </div>
                             </td>
                         </tr>
@@ -39,17 +40,18 @@
                                     <br>
                                     <font size="4" face="Helvetica">
 
-                                        Name: {{ fname }} {{ lname }} <br><br>
+                                        Name: ${ fname } ${ lname } <br><br>
 
-                                        Primary Skill: {{ pri_skill }} <br><br>
+                                        Primary Skill: ${ pri_skill } <br><br>
 
-                                        Location: {{ location }} <br><br>
+                                        Location: ${ location } <br><br>
 
                                     </font>
                                 </div>
                             </td>
                         </tr>
                     </table>
+                    {% endfor %}
     </div>
 
 
