@@ -31,7 +31,6 @@ def show_image(bucket):
             public_urls.append(presigned_url)
     except Exception as e:
         pass
-        # pass
     # print("[INFO] : The contents inside show_image = ", public_urls)
     return public_urls
 
