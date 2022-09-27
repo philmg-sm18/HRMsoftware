@@ -104,10 +104,10 @@ def aboutUs():
     cursor = db_conn.cursor()
     cursor.execute('SELECT * FROM employee')
     employees = cursor.fetchall()
-    emp_image_file = show_image(custombucket)
+    emp_image_files = show_image(custombucket)
     #emp_image_file = 'https://pbs.twimg.com/profile_images/1389140738827501568/RUeCH5Dg_400x400.jpg'
     return render_template(
-        'AboutUs.html', employees=employees, emp_image_file=emp_image_file)
+        'AboutUs.html', employees=employees, emp_image_files=emp_image_files)
 
 
 if __name__ == '__main__':
