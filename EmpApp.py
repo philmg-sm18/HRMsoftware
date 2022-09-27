@@ -89,8 +89,7 @@ def aboutUs():
     cursor = db_conn.cursor()
     cursor.execute('SELECT * FROM employee')
     db = cursor.fetchone()
-    new_var = print(db)
-    return new_var
+    print(db)
     """
     emp_id = db['emp_id']
     first_name = db['first_name']
