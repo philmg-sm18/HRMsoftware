@@ -108,7 +108,7 @@ def aboutUs():
         'AboutUs.html', employees=employees, emp_image_files=emp_image_files, employees_count=len(employees))
 
 
-@app.route('/getEmp')
+@app.route('/getEmp', methods=['POST'])
 def getEmp():
     return render_template('GetEmp.html')
 
