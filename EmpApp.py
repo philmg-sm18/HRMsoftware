@@ -113,5 +113,20 @@ def getEmp():
     return render_template('GetEmp.html')
 
 
+@app.route('/fetchdata')
+def getEmpData():
+    emp_id = request.form['emp_id']
+    cursor = db_conn.cursor()
+    cursor.execute('SELECT * FROM employee')
+    employees = cursor.fetchall()
+    emp_image_files = show_image(custombucket)
+    for i in range(0, len(employees)):
+        if employees[i][0] == emp_id:
+            employee = employees[i]
+            emp_image_file = emp_image_files[i]
+    return render_template(
+        'GetEmpOutput.html', employee=employee, emp_image_file=emp_image_file)
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=True)

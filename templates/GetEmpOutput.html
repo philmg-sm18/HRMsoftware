@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Employee Information</title>
 </head>
@@ -14,21 +15,23 @@
 
 				<div>
 
-			  		Employee ID:<br> {{ id }} <br><br>
+					Employee ID:<br> {{ employee[0] }} <br><br>
 
-			  		First Name:<br> {{ fname }} <br><br>
+					First Name:<br> {{ employee[1] }} <br><br>
 
-			  		Last Name:<br> {{ lname }} <br><br>
+					Last Name:<br> {{ employee[2] }} <br><br>
 
-			  		Primary Interest:<br> {{ interest }} <br><br>
+					Primary Skill:<br> {{ employee[3] }} <br><br>
 
-			  		Location:<br> {{ location }} <br><br>
+					Location:<br> {{ employee[4] }} <br><br>
 
-			  		Image URL: <br> {{ image_url }} <br><br>
+					Image URL: <br> {{ emp_image_file }} <br><br>
 
-			  		<button type="submit" style="background: grey; height: 45px; width: 200px; color:white; font:oblique;" formaction="http://3.134.115.108:80/getemp">RESET</button><br><br>
+					<button type="submit"
+						style="background: grey; height: 45px; width: 200px; color:white; font:oblique;"
+						formaction="/getEmp">RESET</button><br><br>
 
-			  	</div>
+				</div>
 
 			</form>
 
@@ -36,4 +39,5 @@
 
 	</font>
 </center>
+
 </html>
