@@ -11,7 +11,7 @@
     .button {
         padding: 8px 32px;
         margin: 4px 16px;
-        width: 200px;
+        width: 260px;
         font-size: 24px;
         border: 2px solid black;
         text-decoration: none;
@@ -44,9 +44,15 @@
             </h1>
             <img src="../assests/Logo.jpeg" class="backgroundFiller">
             <div style="display:flex; width: 100%; align-items: center; justify-content: center">
-                <a href="AddEmp.html" class="add button">Add Employee</a>
-                <a href="GetEmp.html" class="search button">Search Employee</a>
-                <a href="AboutUs.html" class="aboutUs button">About Us</a>
+                <form action="/addEmp" autocomplete="on" method="GET">
+                    <button type="submit" class="add button">Add Employee</button>
+                </form>
+                <form action="/addEmp" autocomplete="on" method="GET">
+                    <button type="submit" class="search button">Search Employee</button>
+                </form>
+                <form action="/addEmp" autocomplete="on" method="GET">
+                    <button type="submit" class="aboutUs button">About Us</button>
+                </form>
             </div>
         </div>
     </div>
