@@ -3,6 +3,9 @@ from pymysql import connections
 import os
 import boto3
 from config import *
+import jinja2
+env = jinja2.Environment()
+env.globals.update(zip=zip)
 
 app = Flask(__name__)
 
@@ -33,7 +36,7 @@ def show_image(bucket):
     except Exception as e:
         pass
     # print("[INFO] : The contents inside show_image = ", public_urls)
-    return tuple(public_urls)
+    return public_urls
 
 
 @app.route("/", methods=['GET', 'POST'])
@@ -104,11 +107,10 @@ def aboutUs():
     cursor = db_conn.cursor()
     cursor.execute('SELECT * FROM employee')
     employees = cursor.fetchall()
-    emp_image_file = show_image(custombucket)
-    employees_results = (employees,) + (emp_image_file,)
+    emp_image_files = show_image(custombucket)
     #emp_image_file = 'https://pbs.twimg.com/profile_images/1389140738827501568/RUeCH5Dg_400x400.jpg'
     return render_template(
-        'AboutUs.html', employees=employees_results, emp_image_file=emp_image_file)
+        'AboutUs.html', employees=employees, emp_image_file=emp_image_files)
 
 
 if __name__ == '__main__':
