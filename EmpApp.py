@@ -113,7 +113,7 @@ def getEmp():
     return render_template('GetEmp.html')
 
 
-@app.route('/fetchdata')
+@app.route('/fetchdata', methods="POST")
 def getEmpData():
     emp_id = request.form['emp_id']
     cursor = db_conn.cursor()
