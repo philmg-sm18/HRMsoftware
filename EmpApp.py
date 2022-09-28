@@ -43,6 +43,7 @@ def delete_image(bucket, position):
             presigned_url = s3_client.generate_presigned_url(
                 'get_object', Params={'Bucket': bucket, 'Key': item['Key']}, ExpiresIn=100)
             #s3_client.delete_object(Bucket=bucket, Key=item['Key'])
+        else:
             i += 1
     return presigned_url
 
