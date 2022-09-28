@@ -133,7 +133,7 @@ def getEmpData():
 @app.route('/delEmp', methods=['GET'])
 def deleteEmp():
     #emp_id = '1'
-    emp_id = request.args['emp_id']
+    emp_id = request.form['emp_id']
     cursor = db_conn.cursor()
     #cursor.execute("DELETE FROM employee WHERE id = %s" % emp_id)
     cursor.execute('SELECT * FROM employee')
