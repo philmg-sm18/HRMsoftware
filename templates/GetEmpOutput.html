@@ -33,10 +33,15 @@
 
 					<button type="submit"
 						style="background: grey; height: 45px; width: 200px; color:white; font:oblique;"
-						formaction="/getEmp">RESET</button><br><br>
+						formaction="/getEmp">BACK</button><br><br>
 
 				</div>
 
+			</form>
+			<form method="GET">
+				<button type="submit" value="{{ employee[0] }}"
+					style="background: grey; height: 45px; width: 200px; color:white; font:oblique;"
+					formaction="/delEmp">DELETE THIS EMPLOYEE</button><br><br>
 			</form>
 
 		</body>

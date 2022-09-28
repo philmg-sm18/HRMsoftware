@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import Flask, render_template, request
 from pymysql import connections
 import os
@@ -127,6 +128,26 @@ def getEmpData():
             break
     return render_template(
         'GetEmpOutput.html', employee=employee, emp_image_file=emp_image_file)
+
+
+@app.route('/delEmp', methods=['GET'])
+def deleteEmp():
+    #emp_id = '1'
+    emp_id = request.args['emp_id']
+    cursor = db_conn.cursor()
+    #cursor.execute("DELETE FROM employee WHERE id = %s" % emp_id)
+    cursor.execute('SELECT * FROM employee')
+    employees = cursor.fetchall()
+    emp_image_files = show_image(custombucket)
+    for i in range(0, len(employees)):
+        if employees[i][0] == emp_id:
+            employee = employees[i]
+            emp_image_file = emp_image_files[i]
+            break
+    return render_template(
+        'GetEmpOutput.html', employee=employee, emp_image_file=emp_image_file)
+    # return render_template(
+    #    'AddEmp.html')
 
 
 if __name__ == '__main__':
