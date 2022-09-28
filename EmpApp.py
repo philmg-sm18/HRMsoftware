@@ -130,7 +130,7 @@ def getEmpData():
         'GetEmpOutput.html', employee=employee, emp_image_file=emp_image_file)
 
 
-@app.route('/delEmp', methods=['GET'])
+@app.route('/delEmp', methods=['POST'])
 def deleteEmp():
     #emp_id = '1'
     emp_id = request.form['emp_id']
