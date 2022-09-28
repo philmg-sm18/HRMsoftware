@@ -153,8 +153,8 @@ def deleteEmp():
         if employees[i][0] == emp_id:
             position = i
             break
+    cursor.execute("DELETE FROM employee WHERE emp_id = %s" % emp_id)
     delete_image(custombucket, position)
-    cursor.execute("DELETE FROM employee WHERE id = %s" % emp_id)
     return render_template('AddEmp.html')
 
 
