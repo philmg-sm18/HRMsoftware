@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../AboutUs.css">
     <title>About Us</title>
 </head>
 
@@ -25,16 +24,16 @@
                 <h3 style="color:black">Our Members</h1>
 
                     {% for i in range(0,employees_count) %}
-                    <table width="50%" height="300px">
-                        <tr>
-                            <td colspan="2">
+                    <table style="border: 2px solid black; border-collapse: collapse;" width="50%" height="300px">
+                        <tr style="border: 2px solid black; border-collapse: collapse;">
+                            <td style="border: 2px solid black; border-collapse: collapse;" colspan="2">
                                 <div style="text-align: center">
                                     <font size="5" face="Helvetica">{{ employees[i][1] }}</font>
                                 </div>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
+                        <tr style="border: 2px solid black; border-collapse: collapse;">
+                            <td style="border: 2px solid black; border-collapse: collapse;">
                                 <div style="text-align: center;">
                                     <img src="{{ emp_image_files[i] }}" align="center" width="250px" height="250px">
                                 </div>
