@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+</head>
+
+<body>
+    <div>
+        <center>
+            <font color="black" size="4" style="font-family: avenir">
+
+                <h1 style="color: DodgerBlue">About Us</h1>
+
+                <form action="/" autocomplete="on" method="GET">
+                    <button type="submit"
+                        style="background: grey; height: 45px; width: 200px; color:white; font:oblique;">GO
+                        BACK</button><br><br>
+                </form>
+
+                <h4 style="color:black">Our Portfolio</h1>
+
+                    {% for i in range(0,employees_count) %}
+                    <div class="card-block">
+                        <h2>{{employees[i][1]}}</h2>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <p><img src="{{ emp_image_files[i] }}" class="img-responsive"
+                                        alt="website template image"></p>
+                            </div>
+                            <div class="col-md-8">
+                                <p>Name: {{employees[i][1]}} {{employees[i][2]}} </p>
+                                <p>Primary Skill: {{employees[i][3]}}</p>
+                                <p>Location: {{employees[i][4]}} </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+    </div>
+
+
+</body>
+
+</html>
