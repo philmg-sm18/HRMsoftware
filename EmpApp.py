@@ -109,7 +109,7 @@ def aboutUs():
 
 
 @app.route('/getEmp')
-def aboutUs():
+def getEmp():
     return render_template('GetEmp.html')
 
 
