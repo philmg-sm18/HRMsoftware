@@ -7,21 +7,15 @@
 <center>
 	<font color="black" size="4" style="font-family: avenir">
 
-		<form action="/" autocomplete="on" method="GET">
-			<button type="submit"
-				style="background: grey; height: 45px; width: 200px; color:white; font:oblique;">GO
-				BACK</button><br><br>
-		</form>
-		
 		<h1 style="color: DodgerBlue">Employee Database</h1>
 
 		<body bgcolor="lightgrey">
 
 			<form action="/addemp" autocomplete="on" method="POST" enctype="multipart/form-data">
 
-				<button type="submit" formaction="/getEmp"
-					style="background: grey; height: 45px; width: 200px; color:white; font:oblique;">GET EMPLOYEE
-					INFORMATION</button><br><br>
+				<button type="submit" formaction="/"
+					style="background: grey; height: 45px; width: 200px; color:white; font:oblique;">GO
+					BACK</button><br><br>
 
 				Employee ID:<br> <input style="height:25px;font-size:14pt; color:grey;" type="number" name="emp_id"
 					autofocus size="40"><br><br>
@@ -44,19 +38,6 @@
 					DATABASE</button>
 
 			</form>
-
-			<form action="/aboutUs">
-				<button>
-					About Us
-				</button>
-			</form>
-			<br>
-			<form action="/getEmp" method="POST">
-				<button>
-					Search Employee
-				</button>
-			</form>
-
 		</body>
 
 	</font>
