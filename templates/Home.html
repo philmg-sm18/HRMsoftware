@@ -42,15 +42,15 @@
         <div style="font-family: avenir">
             <h1 style="color: DodgerBlue; font-size:56px; margin: 0px; text-align:center;">Human Resource Management
             </h1>
-            <img src="~/assests/Logo.jpeg" class="backgroundFiller">
+            <img src="../assests/Logo.jpeg" class="backgroundFiller">
             <div style="display:flex; width: 100%; align-items: center; justify-content: center">
                 <form action="/addEmp" autocomplete="on" method="GET">
                     <button type="submit" class="add button">Add Employee</button>
                 </form>
-                <form action="/getEmp" autocomplete="on" method="GET">
+                <form action="/getEmp" autocomplete="on" method="POST">
                     <button type="submit" class="search button">Search Employee</button>
                 </form>
-                <form action="/aboutUs" autocomplete="on" method="GET">
+                <form action="/aboutUs" autocomplete="on">
                     <button type="submit" class="aboutUs button">About Us</button>
                 </form>
             </div>
