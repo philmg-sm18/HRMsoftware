@@ -1,5 +1,225 @@
 <!DOCTYPE html>
 <html>
+<style>
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		font-family: poppins;
+		font-size: 16px;
+		color: #fff;
+	}
+
+	.form-box {
+		background-color: rgba(0, 0, 0, 0.5);
+		margin: auto auto;
+		padding: 40px;
+		border-radius: 5px;
+		box-shadow: 0 0 10px #000;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 700px;
+		height: 930px;
+		zoom: 75%;
+	}
+
+	.form-box:before {
+		background-image: url("https://wallpaperaccess.com/full/2579546.jpg");
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		content: "";
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: -1;
+		display: block;
+		filter: blur(2px);
+	}
+
+	.form-box .header-text {
+		font-size: 32px;
+		font-weight: 600;
+		padding-bottom: 30px;
+		text-align: center;
+	}
+
+	.form-box input {
+		margin: 10px 0px;
+		border: none;
+		padding: 10px;
+		border-radius: 5px;
+		width: 50%;
+		font-size: 18px;
+		font-family: poppins;
+	}
+
+	.form-box input[type=checkbox] {
+		display: none;
+	}
+
+	.form-box label {
+		position: relative;
+		margin-left: 5px;
+		margin-right: 10px;
+		top: 5px;
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		cursor: pointer;
+	}
+
+	.form-box label:before {
+		content: "";
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		border-radius: 5px;
+		position: absolute;
+		left: 0;
+		bottom: 1px;
+		background-color: #ddd;
+	}
+
+	.form-box input[type=checkbox]:checked+label:before {
+		content: "\2713";
+		font-size: 20px;
+		color: #000;
+		text-align: center;
+		line-height: 20px;
+	}
+
+	.form-box span {
+		font-size: 14px;
+	}
+
+	.form-box button {
+		background-color: deepskyblue;
+		color: #fff;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		width: 100%;
+		font-size: 18px;
+		padding: 10px;
+		margin: 20px 0px;
+	}
+
+	span a {
+		color: #BBB;
+	}
+
+	.center-block {
+		display: block;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.form-box2 {
+		background-color: rgba(0, 0, 0, 0.5);
+		margin: auto auto;
+		padding: 40px;
+		border-radius: 5px;
+		box-shadow: 0 0 10px #000;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 700px;
+		height: 1000px;
+	}
+
+	.form-box2:before {
+		background-image: url("https://wallpaperaccess.com/full/2579546.jpg");
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		content: "";
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: -1;
+		display: block;
+		filter: blur(2px);
+	}
+
+	.form-box2 .header-text {
+		font-size: 32px;
+		font-weight: 600;
+		padding-bottom: 30px;
+		text-align: center;
+	}
+
+	.form-box2 input {
+		margin: 10px 0px;
+		border: none;
+		padding: 10px;
+		border-radius: 5px;
+		width: 50%;
+		font-size: 18px;
+		font-family: poppins;
+	}
+
+	.form-box2 input[type=checkbox] {
+		display: none;
+	}
+
+	.form-box2 label {
+		position: relative;
+		margin-left: 5px;
+		margin-right: 10px;
+		top: 5px;
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		cursor: pointer;
+	}
+
+	.form-box2 label:before {
+		content: "";
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		border-radius: 5px;
+		position: absolute;
+		left: 0;
+		bottom: 1px;
+		background-color: #ddd;
+	}
+
+	.form-box2 input[type=checkbox]:checked+label:before {
+		content: "\2713";
+		font-size: 20px;
+		color: #000;
+		text-align: center;
+		line-height: 20px;
+	}
+
+	.form-box2 span {
+		font-size: 14px;
+	}
+
+	.form-box2 button {
+		background-color: deepskyblue;
+		color: #fff;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		width: 100%;
+		font-size: 18px;
+		padding: 10px;
+		margin: 20px 0px;
+	}
+</style>
 
 <head>
 	<title>Employee Information</title>
@@ -7,25 +227,27 @@
 <center>
 	<font color="black" size="5" style="font-family: avenir">
 
-		<h1 style="color: DodgerBlue">Employee Information</h1>
+		<h1 style="color: rgb(255, 255, 255)">Employee Information</h1>
+		<div class="form-box2">
 
-		<body bgcolor="lightgrey">
+			<body bgcolor="lightgrey">
 
-			<form method="POST">
+				<form method="POST" style="color: aliceblue">
 
-				<div>
 
+					<br><br><br>
 					Employee ID:<br> {{ employee[0] }} <br><br>
+					<div style="float: left; padding-left: 100px;">First Name:<br> {{ employee[1] }}</div>
+					<div style="float: right; padding-right: 100px;">Last Name:<br> {{ employee[2] }}</div>
+					<br><br><br><br><br>
+					<div style="float: left;padding-left: 100px;">Primary Skill:<br> {{ employee[3] }} <br><br></div>
+					<div style="float: right; padding-right: 100px;">Location:<br> {{ employee[4] }} <br><br>
+					</div><br><br><br>
 
-					First Name:<br> {{ employee[1] }} <br><br>
 
-					Last Name:<br> {{ employee[2] }} <br><br>
 
-					Primary Skill:<br> {{ employee[3] }} <br><br>
 
-					Location:<br> {{ employee[4] }} <br><br>
 
-					Image:
 					<div style="text-align: center;"><br>
 						<img src="{{ emp_image_file }}" align="center" width="500px" height="500px">
 					</div>
@@ -33,17 +255,18 @@
 
 					<button type="submit"
 						style="background: grey; height: 45px; width: 200px; color:white; font:oblique;"
-						formaction="/getEmp">BACK</button><br><br>
+						formaction="/getEmp">BACK</button>
+					<form method="POST">
+						<button type="submit" name="emp_id" value="{{ employee[0] }}"
+							style="background: grey; height: 45px; width: 200px; color:white; font:oblique;"
+							formaction="/delEmp">DELETE</button><br><br>
+					</form>
 
-				</div>
 
-			</form>
-			<form method="POST">
-				<button type="submit" name="emp_id" value="{{ employee[0] }}"
-					style="background: grey; height: 45px; width: 200px; color:white; font:oblique;"
-					formaction="/delEmp">DELETE THIS EMPLOYEE</button><br><br>
-			</form>
 
+				</form>
+
+		</div>
 		</body>
 
 	</font>

@@ -1,11 +1,13 @@
 * {
 	box-sizing: border-box;
 }
+
 body {
 	font-family: poppins;
 	font-size: 16px;
 	color: #fff;
 }
+
 .form-box {
 	background-color: rgba(0, 0, 0, 0.5);
 	margin: auto auto;
@@ -19,6 +21,7 @@ body {
 	right: 0;
 	width: 700px;
 	height: 930px;
+	zoom: 75%;
 }
 
 .form-box:before {
@@ -36,12 +39,14 @@ body {
 	display: block;
 	filter: blur(2px);
 }
+
 .form-box .header-text {
 	font-size: 32px;
 	font-weight: 600;
 	padding-bottom: 30px;
 	text-align: center;
 }
+
 .form-box input {
 	margin: 10px 0px;
 	border: none;
@@ -51,9 +56,11 @@ body {
 	font-size: 18px;
 	font-family: poppins;
 }
+
 .form-box input[type=checkbox] {
 	display: none;
 }
+
 .form-box label {
 	position: relative;
 	margin-left: 5px;
@@ -64,6 +71,7 @@ body {
 	height: 20px;
 	cursor: pointer;
 }
+
 .form-box label:before {
 	content: "";
 	display: inline-block;
@@ -75,6 +83,7 @@ body {
 	bottom: 1px;
 	background-color: #ddd;
 }
+
 .form-box input[type=checkbox]:checked+label:before {
 	content: "\2713";
 	font-size: 20px;
@@ -82,9 +91,11 @@ body {
 	text-align: center;
 	line-height: 20px;
 }
+
 .form-box span {
 	font-size: 14px;
 }
+
 .form-box button {
 	background-color: deepskyblue;
 	color: #fff;
@@ -105,9 +116,9 @@ span a {
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
-  }
+}
 
-  .form-box2 {
+.form-box2 {
 	background-color: rgba(0, 0, 0, 0.5);
 	margin: auto auto;
 	padding: 40px;
@@ -137,12 +148,14 @@ span a {
 	display: block;
 	filter: blur(2px);
 }
+
 .form-box2 .header-text {
 	font-size: 32px;
 	font-weight: 600;
 	padding-bottom: 30px;
 	text-align: center;
 }
+
 .form-box2 input {
 	margin: 10px 0px;
 	border: none;
@@ -152,9 +165,11 @@ span a {
 	font-size: 18px;
 	font-family: poppins;
 }
+
 .form-box2 input[type=checkbox] {
 	display: none;
 }
+
 .form-box2 label {
 	position: relative;
 	margin-left: 5px;
@@ -165,6 +180,7 @@ span a {
 	height: 20px;
 	cursor: pointer;
 }
+
 .form-box2 label:before {
 	content: "";
 	display: inline-block;
@@ -176,6 +192,7 @@ span a {
 	bottom: 1px;
 	background-color: #ddd;
 }
+
 .form-box2 input[type=checkbox]:checked+label:before {
 	content: "\2713";
 	font-size: 20px;
@@ -183,9 +200,11 @@ span a {
 	text-align: center;
 	line-height: 20px;
 }
+
 .form-box2 span {
 	font-size: 14px;
 }
+
 .form-box2 button {
 	background-color: deepskyblue;
 	color: #fff;
