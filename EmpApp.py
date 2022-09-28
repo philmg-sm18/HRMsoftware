@@ -107,7 +107,7 @@ def aboutUs():
     emp_image_files = show_image(custombucket)
     #emp_image_file = 'https://pbs.twimg.com/profile_images/1389140738827501568/RUeCH5Dg_400x400.jpg'
     return render_template(
-        'AboutUs.html', employees=employees, emp_image_file=emp_image_files)
+        'AboutUs.html', employees=employees, emp_image_file=emp_image_files, employees_count=len(employees))
 
 
 if __name__ == '__main__':
