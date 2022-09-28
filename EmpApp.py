@@ -145,7 +145,6 @@ def getEmpData():
 
 @app.route('/delEmp', methods=['POST'])
 def deleteEmp():
-    #emp_id = '1'
     emp_id = request.form['emp_id']
     cursor = db_conn.cursor()
     cursor.execute('SELECT * FROM employee')
@@ -153,13 +152,10 @@ def deleteEmp():
     for i in range(0, len(employees)):
         if employees[i][0] == emp_id:
             position = i
-            #employee = employees[i]
             break
     delete_image(custombucket, position)
-    #cursor.execute("DELETE FROM employee WHERE id = %s" % emp_id)
+    cursor.execute("DELETE FROM employee WHERE id = %s" % emp_id)
     return render_template('AddEmp.html')
-    # return render_template(
-    #    'GetEmpOutput.html', employee=employee, emp_image_file=emp_image_file)
 
 
 if __name__ == '__main__':
