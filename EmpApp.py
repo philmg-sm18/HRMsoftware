@@ -51,6 +51,7 @@ def delete_image(bucket, position):
 def home():
     return render_template('Home.html')
 
+
 @app.route("/addEmp", methods=['GET', 'POST'])
 def addEmp():
     return render_template('AddEmp.html')
