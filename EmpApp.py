@@ -3,9 +3,6 @@ from pymysql import connections
 import os
 import boto3
 from config import *
-import jinja2
-env = jinja2.Environment()
-env.globals.update(zip=zip)
 
 app = Flask(__name__)
 
