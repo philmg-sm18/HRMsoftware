@@ -155,7 +155,7 @@ def deleteEmp():
     cursor.execute("DELETE FROM employee WHERE emp_id = %s", emp_id)
     db_conn.commit()
     delete_image(custombucket, position)
-    return render_template('/')
+    return render_template('AddEmp.html')
 
 
 if __name__ == '__main__':
