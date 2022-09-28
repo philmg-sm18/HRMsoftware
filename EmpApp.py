@@ -124,6 +124,7 @@ def getEmpData():
         if employees[i][0] == emp_id:
             employee = employees[i]
             emp_image_file = emp_image_files[i]
+            break
     return render_template(
         'GetEmpOutput.html', employee=employee, emp_image_file=emp_image_file)
 
