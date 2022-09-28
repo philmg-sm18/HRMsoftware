@@ -40,12 +40,12 @@ def delete_image(bucket, position):
     i = 0
     for item in s3_client.list_objects(Bucket=bucket)['Contents']:
         if i == position:
-            presigned_url = s3_client.generate_presigned_url(
-                'get_object', Params={'Bucket': bucket, 'Key': item['Key']}, ExpiresIn=100)
-            #s3_client.delete_object(Bucket=bucket, Key=item['Key'])
+            # presigned_url = s3_client.generate_presigned_url(
+            #    'get_object', Params={'Bucket': bucket, 'Key': item['Key']}, ExpiresIn=100)
+            s3_client.delete_object(Bucket=bucket, Key=item['Key'])
         else:
             i += 1
-    return presigned_url
+    # return presigned_url
 
 
 @app.route("/", methods=['GET', 'POST'])
@@ -150,18 +150,16 @@ def deleteEmp():
     cursor = db_conn.cursor()
     cursor.execute('SELECT * FROM employee')
     employees = cursor.fetchall()
-    #emp_image_file = show_image(custombucket)
     for i in range(0, len(employees)):
         if employees[i][0] == emp_id:
             position = i
-            employee = employees[i]
+            #employee = employees[i]
             break
-    emp_image_file = delete_image(custombucket, position)
+    delete_image(custombucket, position)
     #cursor.execute("DELETE FROM employee WHERE id = %s" % emp_id)
+    return render_template('AddEmp.html')
     # return render_template(
-    #    'AddEmp.html')
-    return render_template(
-        'GetEmpOutput.html', employee=employee, emp_image_file=emp_image_file)
+    #    'GetEmpOutput.html', employee=employee, emp_image_file=emp_image_file)
 
 
 if __name__ == '__main__':
